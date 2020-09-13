@@ -1,20 +1,14 @@
 import React from 'react';
-import { Router, Stack, Scene } from 'react-native-router-flux';
-import Home from './src/pages/Home';
+import { Dimensions, StatusBar, View } from 'react-native';
+
+import Routes from './src/components/routes';
 
 const App = () => {
   return (
-    <Router>
-      <Stack key="root">
-        <Scene
-          key="home"
-          component={Home}
-          title="Home"
-          initial={true}
-          hideNavBar={true}
-        />
-      </Stack>
-    </Router >
+    <>
+      <StatusBar backgroundColor="#166494" />
+      <Routes />
+    </>
   );
 }
 
