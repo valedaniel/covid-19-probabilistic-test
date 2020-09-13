@@ -21,5 +21,12 @@ export default StyleSheet.create({
         width: DEVICE_WIDTH * 0.3,
         height: DEVICE_WIDTH * 0.3,
         marginTop: 25
+    },
+    icon: {
+        color: '#fff'
+    },
+    backButton: {
+        position: 'absolute',
+        marginTop: 3
     }
 });
