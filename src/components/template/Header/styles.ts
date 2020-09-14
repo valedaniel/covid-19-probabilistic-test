@@ -20,7 +20,7 @@ export default StyleSheet.create({
     image: {
         width: DEVICE_WIDTH * 0.3,
         height: DEVICE_WIDTH * 0.3,
-        marginTop: 25
+        marginVertical: 20
     },
     icon: {
         color: '#fff'

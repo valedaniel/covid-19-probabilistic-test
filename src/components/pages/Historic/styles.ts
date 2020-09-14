@@ -4,34 +4,20 @@ const DEVICE_WIDTH = Dimensions.get('window').width;
 const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 export default StyleSheet.create({
-    containerText: {
-        marginVertical: 15,
-        width: DEVICE_WIDTH * 0.6,
-        alignSelf: 'center'
-    },
-    containerInput: {
-        width: DEVICE_WIDTH * 0.85,
-        alignSelf: 'center'
+    scrollView: {
     },
     text: {
-        textAlign: 'center',
-        color: '#fff'
-    },
-    input: {
         color: '#fff',
-        fontSize: 15,
+        textAlign: 'center',
+        width: '100%',
     },
-    item: {
-        marginVertical: 5,
-        height: 45
-    },
-    icon: {
-        margin: 10,
-        fontSize: DEVICE_WIDTH * 0.065,
-        color: '#fff'
+    container: {
+        marginBottom: 20
     },
     button: {
-        marginTop: 10,
-        borderRadius: 20
+        width: DEVICE_WIDTH * 0.8,
+        alignSelf: 'center',
+        borderRadius: 10,
+        marginTop: 10
     }
 });

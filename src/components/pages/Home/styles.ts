@@ -5,7 +5,7 @@ const DEVICE_HEIGHT = Dimensions.get('window').height;
 
 export default StyleSheet.create({
     containerText: {
-        marginVertical: 15,
+        marginBottom: 15,
         width: DEVICE_WIDTH * 0.6,
         alignSelf: 'center'
     },
@@ -32,6 +32,6 @@ export default StyleSheet.create({
     },
     button: {
         marginTop: 10,
-        borderRadius: 20
+        borderRadius: 10
     }
 });

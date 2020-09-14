@@ -38,7 +38,7 @@ function Home(props: any) {
         Toast.show({
             text: message,
             buttonText: "Ok",
-        })
+        });
     }
 
     return (
@@ -48,7 +48,7 @@ function Home(props: any) {
                 <View style={styles.containerText}>
                     <Text style={styles.text}>
                         Insira as informações abaixo para que possa iniciar o teste
-                </Text>
+                    </Text>
                 </View>
                 <View style={styles.containerInput}>
                     <Item style={styles.item} rounded inlineLabel>
