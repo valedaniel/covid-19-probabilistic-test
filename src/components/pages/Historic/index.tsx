@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from '../../template/Header';
 
-import { Button, Content, Toast } from 'native-base';
+import { Button, Content, Root, Toast } from 'native-base';
 
 import { Linking, ScrollView, Text, View } from 'react-native';
 
-import styles from './styles';
 import QuestionCard from '../../template/QuestionCard';
 
+import styles from './styles';
+
 function Historic(props: any) {
+
+    const { navigation } = props;
+
+    const [questions, setQuestions] = useState([
+        { description: "Você teve contato com alguém que foi diagnosticado com a covid-19 nos últimos dias?", answer: '' },
+        { description: "Houve algum caso confirmado em sua região?", answer: '' },
+        { description: "Você faz parte do grupo de risco?", answer: '' }
+    ]);
 
     function redirectToCoronavirusPage() {
         Linking.openURL('https://covid.saude.gov.br/')
@@ -18,51 +27,81 @@ function Historic(props: any) {
                     text: 'Ocorreu um erro ao redirecionar para a página',
                     buttonText: "Ok",
                 });
-            }
-            );
+            });
     }
 
+    function nextPage() {
+        const isValid = validateFields();
+
+        if (isValid) {
+            navigation.push('SymptomsAndPrevention');
+        }
+
+        Toast.show({
+            text: 'Responda a todas as perguntas listadas',
+            buttonText: "Ok",
+        });
+    }
+
+    function validateFields() {
+        let isValid = true;
+
+        questions.forEach(question => {
+            if (!question.answer) {
+                isValid = false;
+                return;
+            }
+        })
+
+        return isValid
+    }
+
+    function onChangeQuestion(description: string, option: string) {
+        questions.forEach(question => {
+            if (question.description === description) {
+                question.answer = option;
+            }
+        });
+        setQuestions(questions);
+    }
+
+    function renderQuestions() {
+        return questions.map(question => {
+            return <QuestionCard
+                key={question.description}
+                question={question.description}
+                firstOption="Sim"
+                secondOption="Não"
+                onClickButton={(option: string) => onChangeQuestion(question.description, option)}
+            />
+        })
+    }
     return (
         <Content>
-            <Header subTitle="Histórico de Contato" />
-            <ScrollView style={styles.scrollView}>
-                <View style={styles.container}>
-                    <Text style={styles.text}>Responda as seguintes perguntas:</Text>
-                    <QuestionCard
-                        question="Você teve contato com alguém que foi diagnosticado com a covid-19 nos últimos dias?"
-                        firstOption="Sim"
-                        secondOption="Não"
-                        onClickButton={(option: string) => console.log(option)}
-                    />
-                    <QuestionCard
-                        question="Houve algum caso confirmado em sua região?"
-                        firstOption="Sim"
-                        secondOption="Não"
-                        onClickButton={(option: string) => console.log(option)}
-                    />
-                    <QuestionCard
-                        question="Você faz parte do grupo de risco?"
-                        firstOption="Sim"
-                        secondOption="Não"
-                        onClickButton={(option: string) => console.log(option)}
-                    />
-                </View>
-                <View style={styles.container}>
-                    <Button
-                        style={{ ...styles.button, backgroundColor: '#BD3232' }}
-                        onPress={() => redirectToCoronavirusPage()}
-                    >
-                        <Text style={styles.text}>Saiba Mais</Text>
-                    </Button>
-                    <Button
-                        success
-                        style={{ ...styles.button, backgroundColor: '#53595f' }}
-                        onPress={() => console.log('Próximo')}
-                    >
-                        <Text style={styles.text}>Próximo</Text>
-                    </Button>
-                </View>
-            </ScrollView>
+            <Root>
+                <Header subTitle="Histórico de Contato" />
+                <ScrollView style={styles.scrollView}>
+                    <View style={styles.container}>
+                        <Text style={styles.text}>Responda as seguintes perguntas:</Text>
+                        {renderQuestions()}
+                    </View>
+                    <View style={styles.container}>
+                        <Button
+                            style={{ ...styles.button, backgroundColor: '#BD3232' }}
+                            onPress={() => redirectToCoronavirusPage()}
+                        >
+                            <Text style={styles.text}>Saiba Mais</Text>
+                        </Button>
+                        <Button
+                            success
+                            style={styles.button}
+                            onPress={() => nextPage()}
+                        >
+                            <Text style={styles.text}>Próximo</Text>
+                        </Button>
+                    </View>
+                </ScrollView>
+            </Root>
         </Content >
 
     );

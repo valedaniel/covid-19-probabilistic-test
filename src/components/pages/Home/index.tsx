@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import SplashScreen from 'react-native-splash-screen'
-
+import { MaskService } from 'react-native-masked-text'
 import { Text, View } from 'react-native';
 
 import Header from '../../template/Header';
 
 import { Button, Content, Icon, Input, Item, Root, Toast } from 'native-base';
 
+import { validateCpf } from '../../../utils/validateCpf';
+
 import styles from './styles';
+import InputIcon from '../../template/InputIcon';
 
 function Home(props: any) {
 
     const [name, setName] = useState<string | undefined>(undefined);
+    const [cpf, setCpf] = useState<string | undefined>(undefined);
     const [age, setAge] = useState<string | undefined>(undefined);
     const [city, setCity] = useState<string | undefined>(undefined);
     const [state, setState] = useState<string | undefined>(undefined);
@@ -23,9 +27,14 @@ function Home(props: any) {
     }, []);
 
     function validateFields() {
-        if (!name || !age || !city || !state) {
+        if (!name || !cpf || !age || !city || !state) {
             return { isValid: false, message: 'Preencha todos os campos' };
         }
+
+        if (!validateCpf(cpf)) {
+            return { isValid: false, message: 'Digite um CPF válido' };
+        }
+
         return { isValid: true, message: '' };
     }
 
@@ -51,47 +60,43 @@ function Home(props: any) {
                     </Text>
                 </View>
                 <View style={styles.containerInput}>
-                    <Item style={styles.item} rounded inlineLabel>
-                        <Icon style={styles.icon} type="FontAwesome" name='address-card' />
-                        <Input
-                            placeholder='Insira o seu nome'
-                            placeholderTextColor='#fff'
-                            onChangeText={(text: string) => setName(text)}
-                            value={name}
-                            style={styles.input}
-                        />
-                    </Item>
-                    <Item style={styles.item} rounded inlineLabel>
-                        <Icon style={styles.icon} type="FontAwesome" name='child' />
-                        <Input
-                            keyboardType="numeric"
-                            placeholder='Insira a sua idade'
-                            placeholderTextColor='#fff'
-                            onChangeText={(text: string) => setAge(text)}
-                            value={age}
-                            style={styles.input}
-                        />
-                    </Item>
-                    <Item style={styles.item} rounded inlineLabel>
-                        <Icon style={styles.icon} type="MaterialIcons" name='location-city' />
-                        <Input
-                            placeholder='Insira a sua cidade'
-                            placeholderTextColor='#fff'
-                            onChangeText={(text: string) => setCity(text)}
-                            value={city}
-                            style={styles.input}
-                        />
-                    </Item>
-                    <Item style={styles.item} rounded inlineLabel>
-                        <Icon style={styles.icon} type="MaterialIcons" name='map' />
-                        <Input
-                            placeholder='Insira o seu estado'
-                            placeholderTextColor='#fff'
-                            onChangeText={(text: string) => setState(text)}
-                            value={state}
-                            style={styles.input}
-                        />
-                    </Item>
+                    <InputIcon
+                        typeIcon="MaterialIcons"
+                        nameIcon="person"
+                        placeholder='Insira o seu nome'
+                        value={name}
+                        onChangeText={(text: string) => setName(text)}
+                    />
+                    <InputIcon
+                        typeIcon="FontAwesome"
+                        nameIcon="address-card"
+                        placeholder='Insira o seu CPF'
+                        value={cpf}
+                        keyboardType="numeric"
+                        onChangeText={(text: string) => setCpf(MaskService.toMask('cpf', text))}
+                    />
+                    <InputIcon
+                        typeIcon="FontAwesome"
+                        nameIcon="child"
+                        placeholder='Insira a sua idade'
+                        value={age}
+                        keyboardType="numeric"
+                        onChangeText={(text: string) => setAge(text)}
+                    />
+                    <InputIcon
+                        typeIcon="MaterialIcons"
+                        nameIcon="location-city"
+                        placeholder='Insira a sua cidade'
+                        value={city}
+                        onChangeText={(text: string) => setCity(text)}
+                    />
+                    <InputIcon
+                        typeIcon="MaterialIcons"
+                        nameIcon="map"
+                        placeholder='Insira o seu estado'
+                        value={state}
+                        onChangeText={(text: string) => setState(text)}
+                    />
                     <Button block success onPress={nextPage} style={styles.button}>
                         <Text style={styles.text}>Iniciar</Text>
                     </Button>

@@ -17,21 +17,9 @@ export default StyleSheet.create({
         textAlign: 'center',
         color: '#fff'
     },
-    input: {
-        color: '#fff',
-        fontSize: 15,
-    },
-    item: {
-        marginVertical: 5,
-        height: 45
-    },
-    icon: {
-        margin: 10,
-        fontSize: DEVICE_WIDTH * 0.065,
-        color: '#fff'
-    },
     button: {
         marginTop: 10,
+        marginBottom: 15,
         borderRadius: 10
     }
 });
