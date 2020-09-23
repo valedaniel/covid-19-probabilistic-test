@@ -41,7 +41,7 @@ function Home(props: any) {
     function nextPage() {
         const { isValid, message } = validateFields();
         if (isValid) {
-            navigation.push('Historic');
+            navigation.push('Historic', { person: { name, cpf, age, city, state } });
         }
 
         Toast.show({

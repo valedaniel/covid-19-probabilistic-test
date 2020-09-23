@@ -11,6 +11,16 @@ import InfoCard from '../../template/InfoCard';
 import styles from './styles';
 
 function SymptomsAndPrevention(props: any) {
+
+    const { navigation } = props;
+
+    const person = props?.route?.params?.person;
+    const questions = props?.route?.params?.questions;
+
+    function redirectToProbabilisticDiagnosis() {
+        navigation.push('ProbabilisticDiagnosis', { person, questions });
+    }
+
     return (
         <Content>
             <Root>
@@ -18,7 +28,12 @@ function SymptomsAndPrevention(props: any) {
                 <ScrollView>
                     <View style={styles.container}>
                         <InfoCard
-                            infoTexts={["Febre", "Tosse Seca", "Cansaço", "Perda de paladar"]}
+                            infoTexts={[
+                                "Febre",
+                                "Tosse Seca",
+                                "Cansaço",
+                                "Perda de paladar"
+                            ]}
                             title="Sintomas"
                             typeIcon="Foundation"
                             nameIcon="alert"
@@ -39,7 +54,7 @@ function SymptomsAndPrevention(props: any) {
                         <Button
                             success
                             style={styles.button}
-                            onPress={() => console.log('A')}
+                            onPress={() => redirectToProbabilisticDiagnosis()}
                         >
                             <Text style={styles.text}>Próximo</Text>
                         </Button>

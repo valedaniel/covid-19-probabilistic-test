@@ -7,6 +7,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../pages/Home';
 import Historic from '../pages/Historic';
 import SymptomsAndPrevention from '../pages/SymptomsAndPrevention';
+import ProbabilisticDiagnosis from '../pages/ProbabilisticDiagnosis';
+import PreviousDiseases from '../pages/PreviousDiseases';
+import Result from '../pages/Result';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +28,9 @@ function Routes() {
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Historic" component={Historic} />
                 <Stack.Screen name="SymptomsAndPrevention" component={SymptomsAndPrevention} />
+                <Stack.Screen name="ProbabilisticDiagnosis" component={ProbabilisticDiagnosis} />
+                <Stack.Screen name="PreviousDiseases" component={PreviousDiseases} />
+                <Stack.Screen name="Result" component={Result} />
             </Stack.Navigator>
         </NavigationContainer>
     );

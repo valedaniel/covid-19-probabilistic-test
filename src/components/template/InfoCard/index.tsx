@@ -13,7 +13,7 @@ function InfoCard(props: Props) {
 
     function renderInfoTexts() {
         return infoTexts?.map(infoText => {
-            return <Text style={styles.text}>{infoText}</Text>
+            return <Text key={infoText} style={styles.text}>{infoText}</Text>
         })
     }
 

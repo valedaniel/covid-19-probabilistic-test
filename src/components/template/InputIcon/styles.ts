@@ -10,7 +10,7 @@ export default StyleSheet.create({
     },
     item: {
         marginVertical: 5,
-        height: 45
+        height: DEVICE_HEIGHT * 0.085
     },
     icon: {
         margin: 10,

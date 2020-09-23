@@ -13,6 +13,7 @@ import styles from './styles';
 function Historic(props: any) {
 
     const { navigation } = props;
+    const person = props?.route?.params?.person;
 
     const [questions, setQuestions] = useState([
         { description: "Você teve contato com alguém que foi diagnosticado com a covid-19 nos últimos dias?", answer: '' },
@@ -34,7 +35,7 @@ function Historic(props: any) {
         const isValid = validateFields();
 
         if (isValid) {
-            navigation.push('SymptomsAndPrevention');
+            navigation.push('SymptomsAndPrevention', { person, questions });
         }
 
         Toast.show({
