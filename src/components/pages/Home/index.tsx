@@ -5,12 +5,13 @@ import { Text, View } from 'react-native';
 
 import Header from '../../template/Header';
 
-import { Button, Content, Icon, Input, Item, Root, Toast } from 'native-base';
+import { Button, Content, Root, Toast } from 'native-base';
 
 import { validateCpf } from '../../../utils/validateCpf';
 
-import styles from './styles';
 import InputIcon from '../../template/InputIcon';
+
+import styles from './styles';
 
 function Home(props: any) {
 
