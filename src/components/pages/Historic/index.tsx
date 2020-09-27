@@ -36,12 +36,12 @@ function Historic(props: any) {
 
         if (isValid) {
             navigation.push('SymptomsAndPrevention', { person, questions });
+        } else {
+            Toast.show({
+                text: 'Responda a todas as perguntas listadas',
+                buttonText: "Ok",
+            });
         }
-
-        Toast.show({
-            text: 'Responda a todas as perguntas listadas',
-            buttonText: "Ok",
-        });
     }
 
     function validateFields() {

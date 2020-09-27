@@ -10,6 +10,7 @@ import SymptomsAndPrevention from '../pages/SymptomsAndPrevention';
 import ProbabilisticDiagnosis from '../pages/ProbabilisticDiagnosis';
 import PreviousDiseases from '../pages/PreviousDiseases';
 import Result from '../pages/Result';
+import Statistic from '../pages/Statistic';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ function Routes() {
                 <Stack.Screen name="ProbabilisticDiagnosis" component={ProbabilisticDiagnosis} />
                 <Stack.Screen name="PreviousDiseases" component={PreviousDiseases} />
                 <Stack.Screen name="Result" component={Result} />
+                <Stack.Screen name="Statistic" component={Statistic} />
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -8,4 +8,5 @@ declare module 'react-native-dotenv' {
     export const MESSAGING_SENDER_ID: string | undefined;
     export const APP_ID: string | undefined;
     export const PATH_REF: string | undefined;
+    export const BASE_URL: string | undefined;
 }

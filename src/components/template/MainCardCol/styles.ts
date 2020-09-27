@@ -6,13 +6,11 @@ const DEVICE_HEIGHT = Dimensions.get('window').height;
 export default StyleSheet.create({
     container: {
         width: DEVICE_WIDTH * 0.8,
-        marginTop: 7,
-        marginBottom: 7,
         backgroundColor: '#DADADA',
-        minHeight: DEVICE_HEIGHT * 0.08,
         alignSelf: 'center',
-        borderRadius: 10,
-        flexDirection: 'row'
+        marginVertical: 4,
+        padding: 3,
+        borderRadius: 10
     },
     text: {
         textAlignVertical: 'center',

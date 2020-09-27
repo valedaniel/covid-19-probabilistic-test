@@ -43,12 +43,12 @@ function Home(props: any) {
         const { isValid, message } = validateFields();
         if (isValid) {
             navigation.push('Historic', { person: { name, cpf, age, city, state } });
+        } else {
+            Toast.show({
+                text: message,
+                buttonText: "Ok",
+            });
         }
-
-        Toast.show({
-            text: message,
-            buttonText: "Ok",
-        });
     }
 
     return (
