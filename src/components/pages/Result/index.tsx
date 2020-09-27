@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { ScrollView, Text, View } from 'react-native';
 
 import Header from '../../template/Header';
 
 import { Button, Content, Icon, Root } from 'native-base';
-
-import { ScrollView, Text, View } from 'react-native';
 
 import firebase from '../../../services/api/firebase';
 
@@ -88,7 +87,6 @@ function Result(props: any) {
                 }
             }
         });
-
 
         return percentageCalculated
     }

@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-
-import Header from '../../template/Header';
+import { ScrollView, Text, View } from 'react-native';
 
 import { Button, Content, Input, Item, Root } from 'native-base';
 
-import { ScrollView, Text, View } from 'react-native';
-
+import Header from '../../template/Header';
 import MainCard from '../../template/MainCard';
 
 import styles from './styles';

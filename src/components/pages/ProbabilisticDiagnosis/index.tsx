@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-
-import Header from '../../template/Header';
+import { ScrollView, Text, View } from 'react-native';
 
 import { Button, Content, Root } from 'native-base';
 
-import { ScrollView, Text, View } from 'react-native';
-
+import Header from '../../template/Header';
 import DiagnosisCheckbox from '../../template/DiagnosisCheckbox';
 
 import styles from './styles';

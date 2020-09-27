@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import SplashScreen from 'react-native-splash-screen'
-import { MaskService } from 'react-native-masked-text'
 import { Text, View } from 'react-native';
 
-import Header from '../../template/Header';
+import SplashScreen from 'react-native-splash-screen'
+import { MaskService } from 'react-native-masked-text'
 
 import { Button, Content, Root, Toast } from 'native-base';
 
-import { validateCpf } from '../../../utils/validateCpf';
-
+import Header from '../../template/Header';
 import InputIcon from '../../template/InputIcon';
+
+import { validateCpf } from '../../../utils/validateCpf';
 
 import styles from './styles';
 

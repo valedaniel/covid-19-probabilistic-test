@@ -1,11 +1,9 @@
 import React from 'react';
-
-import Header from '../../template/Header';
+import { ScrollView, Text, View } from 'react-native';
 
 import { Button, Content, Root } from 'native-base';
 
-import { ScrollView, Text, View } from 'react-native';
-
+import Header from '../../template/Header';
 import InfoCard from '../../template/InfoCard';
 
 import styles from './styles';

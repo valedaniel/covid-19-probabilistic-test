@@ -1,19 +1,18 @@
-import { Button, Content, Picker, Root, Toast } from 'native-base';
 import React, { useEffect, useState } from 'react';
 import { BackHandler, Text, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import SplashScreen from 'react-native-splash-screen';
 
-import covidService from '../../../services/covidService';
+import { Button, Content, Picker, Root, Toast } from 'native-base';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 import Header from '../../template/Header';
 import MainCardCol from '../../template/MainCardCol';
 
+import covidService from '../../../services/covidService';
+
 import styles from './styles';
 
 function Statistic(props: any) {
-
-    const { navigation } = props;
 
     const MESSAGE_SERVER_ERROR = 'Não foi possível se conectar ao servidor'
 
@@ -25,8 +24,6 @@ function Statistic(props: any) {
 
     const [selectedDataValueCountry, setSelectedDataValueCountry] = useState<any>({});
     const [selectedDataValueState, setSelectedDataValueState] = useState<any>({});
-
-    SplashScreen.hide();
 
     useEffect(() => {
         getStatus()
