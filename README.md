@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-    <h1>🦠 Avalia Coronavírus - Documentação</h1>
+  <h1>🦠 Avalia Coronavírus - Documentação</h1>
 
     <h2>📖 Contexto do Projeto</h2>
     <p>
@@ -39,7 +33,6 @@ yarn
 # Inicie o Metro Bundler
 
 yarn start
-</code></pre>
 
     <h3>▶️ Executando o Aplicativo</h3>
 
@@ -49,13 +42,11 @@ yarn start
 # Em um terminal separado:
 
 yarn android
-</code></pre>
 
     <h4>iOS</h4>
     <pre><code>
 
 yarn ios
-</code></pre>
 
     <h2>🛠️ Estrutura Técnica</h2>
     <table border="1">
@@ -80,6 +71,3 @@ yarn ios
     <footer>
         <p>⚠️ Nota: Este projeto foi desenvolvido para fins educacionais e não substitui diagnóstico médico.</p>
     </footer>
-
-</body>
-</html>
