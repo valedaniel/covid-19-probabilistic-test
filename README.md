@@ -1,73 +1,57 @@
-  <h1>🦠 Avalia Coronavírus - Documentação</h1>
+# 🦠 Avalia Coronavírus - Documentação
 
-    <h2>📖 Contexto do Projeto</h2>
-    <p>
-        Desenvolvido durante a pandemia de COVID-19, o aplicativo utiliza um <strong>algoritmo probabilístico</strong> para estimar
-        riscos de infecção com base em sintomas reportados pelo usuário (febre, tosse, falta de ar, perda de olfato/paladar).
-    </p>
+## 📖 Contexto do Projeto
 
-    <h2>🚀 Instalação e Execução</h2>
+Desenvolvido durante a pandemia de COVID-19, o aplicativo utiliza um **algoritmo probabilístico** para estimar riscos de infecção com base em sintomas reportados pelo usuário (febre, tosse, falta de ar, perda de olfato/paladar).
 
-    <h3>📋 Pré-requisitos</h3>
-    <ul>
-        <li>Node.js ≥14.x</li>
-        <li>Java JDK 11</li>
-        <li>Android Studio (para emulador Android) ou Xcode (para iOS)</li>
-    </ul>
+## 🚀 Instalação e Execução
 
-    <h3>⚙️ Configuração Inicial</h3>
-    <pre><code>
+### 📋 Pré-requisitos
 
+- Node.js ≥14.x
+- Java JDK 11
+- Android Studio (para emulador Android) ou Xcode (para iOS)
+
+### ⚙️ Configuração Inicial
+
+```sh
 # Clone o repositório
-
 git clone https://github.com/valedaniel/covid-19-probabilistic-test.git
 
 # Acesse a pasta do projeto
-
 cd covid-19-probabilistic-test
 
 # Instale as dependências
-
 yarn
 
 # Inicie o Metro Bundler
-
 yarn start
+```
 
-    <h3>▶️ Executando o Aplicativo</h3>
+### ▶️ Executando o Aplicativo
 
-    <h4>Android</h4>
-    <pre><code>
+#### Android
 
-# Em um terminal separado:
-
+```sh
+# Em um terminal separado
 yarn android
+```
 
-    <h4>iOS</h4>
-    <pre><code>
+#### iOS
 
+```sh
 yarn ios
+```
 
-    <h2>🛠️ Estrutura Técnica</h2>
-    <table border="1">
-        <tr>
-            <td>React Native</td>
-            <td>Versão 0.63.2 (base para desenvolvimento mobile)</td>
-        </tr>
-        <tr>
-            <td>React Navigation</td>
-            <td>Navegação entre telas de sintomas e resultados</td>
-        </tr>
-        <tr>
-            <td>Native Base</td>
-            <td>Componentes de interface do usuário</td>
-        </tr>
-        <tr>
-            <td>Axios</td>
-            <td>Integração com API de dados epidemiológicos</td>
-        </tr>
-    </table>
+## 🛠️ Estrutura Técnica
 
-    <footer>
-        <p>⚠️ Nota: Este projeto foi desenvolvido para fins educacionais e não substitui diagnóstico médico.</p>
-    </footer>
+| Tecnologia           | Descrição                                        |
+| -------------------- | ------------------------------------------------ |
+| **React Native**     | Versão 0.63.2 (base para desenvolvimento mobile) |
+| **React Navigation** | Navegação entre telas de sintomas e resultados   |
+| **Native Base**      | Componentes de interface do usuário              |
+| **Axios**            | Integração com API de dados epidemiológicos      |
+
+## ⚠️ Nota
+
+Este projeto foi desenvolvido para fins educacionais e não substitui diagnóstico médico.
